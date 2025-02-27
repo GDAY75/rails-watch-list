@@ -1,0 +1,20 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media.lesechos.com/api/v1/images/view/6550a240fb23071e743fd2bd/1280x720/0903264705632-web-tete.jpg);">
+  <div class="container">
+    <h1>Save any kins of movies</h1>
+    <p>Classic</p>
+  </div>
+</div>
+
+<div class="d-flex justify-content-between align-items-center container mt-5">
+  <h2>My lists</h2>
+  <%= link_to "Create a movie list", new_list_path, class: "btn btn-success addlist" %>
+</div>
+
+
+<div class="container d-flex">
+  <% @lists.each do |list| %>
+    <div class="card-category m-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://img.pikbest.com/wp/202345/movie-clapper-cinema-concept-retro-camera-board-and-reel-film-in-3d-render_9615443.jpg!w700wp)">
+      <%= link_to list.name, list_path(list) %>
+    </div>
+  <% end %>
+</div>
